@@ -220,6 +220,8 @@ nav.links a:hover { color: var(--foreground); }
   width: max(100cqw, 177.78cqh); height: max(100cqh, 56.25cqw); /* 16:9 cover crop */
   border: 0; pointer-events: none;
 }
+.slide-poster { transition: opacity 0.6s ease; }
+.slide-media.is-playing .slide-poster { opacity: 0; }
 .media-shade {
   position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 45%, rgba(0,0,0,0.35) 100%);
@@ -434,10 +436,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="treeAideVideo"
-          src="https://player.vimeo.com/video/1122681404?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1122681404?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="From #Bridgerton to #Ghana ✨ Tree Aide"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2064112546-5eb2e374eec836e096c67b371d99e8fa5934ee388f2644ced9e4c9b2498817e5-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2064112546-5eb2e374eec836e096c67b371d99e8fa5934ee388f2644ced9e4c9b2498817e5-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2064112546-5eb2e374eec836e096c67b371d99e8fa5934ee388f2644ced9e4c9b2498817e5-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" fetchpriority="high" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> The Teacher</p>
@@ -466,10 +469,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="teacherVideo"
-          src="https://player.vimeo.com/video/1122679239?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1122679239?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="The Teacher"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2064110292-b9a627c142caeee6bb5c1c02084acd6f06cbfe6cd9557b5d07a130ff811edbc0-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2064110292-b9a627c142caeee6bb5c1c02084acd6f06cbfe6cd9557b5d07a130ff811edbc0-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2064110292-b9a627c142caeee6bb5c1c02084acd6f06cbfe6cd9557b5d07a130ff811edbc0-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> ADB — Making A Difference</p>
@@ -496,10 +500,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="adbVideo"
-          src="https://player.vimeo.com/video/848936526?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/848936526?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="ADB — Making A Difference — AUTP — George"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/1702777435-cd78a1f5370b542a2e11e682a101c3b24075f3252a054453526cef40dc33db37-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/1702777435-cd78a1f5370b542a2e11e682a101c3b24075f3252a054453526cef40dc33db37-d_640x360?region=us 640w, https://i.vimeocdn.com/video/1702777435-cd78a1f5370b542a2e11e682a101c3b24075f3252a054453526cef40dc33db37-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Climate Champions</p>
@@ -526,10 +531,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="climateVideo"
-          src="https://player.vimeo.com/video/907117971?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/907117971?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Climate Champions — Tree Aid"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/1789353278-7f57952f5ca2d006a003640c15e13698d3a4ec97bea664cee0ed1236fbe1c1c4-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/1789353278-7f57952f5ca2d006a003640c15e13698d3a4ec97bea664cee0ed1236fbe1c1c4-d_640x360?region=us 640w, https://i.vimeocdn.com/video/1789353278-7f57952f5ca2d006a003640c15e13698d3a4ec97bea664cee0ed1236fbe1c1c4-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Kubaje&rsquo;s Story</p>
@@ -556,10 +562,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="kubajeVideo"
-          src="https://player.vimeo.com/video/907117622?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/907117622?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Kubaje's Story — Tree Aide"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/1789352779-10fd644566377591a81e3cf26f0fdb49e9c55ccbf8ae27bb2f9d3f8a70fac826-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/1789352779-10fd644566377591a81e3cf26f0fdb49e9c55ccbf8ae27bb2f9d3f8a70fac826-d_640x360?region=us 640w, https://i.vimeocdn.com/video/1789352779-10fd644566377591a81e3cf26f0fdb49e9c55ccbf8ae27bb2f9d3f8a70fac826-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> ADB — Gasslip Cassava</p>
@@ -586,10 +593,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="cassavaVideo"
-          src="https://player.vimeo.com/video/848910319?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/848910319?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="ADB — Making A Difference — Gasslip — Cassava"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/1702738711-c5a1d9e11d737b015712a9c970aaf565d28e17517c4ffb066366f477bfd45fe4-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/1702738711-c5a1d9e11d737b015712a9c970aaf565d28e17517c4ffb066366f477bfd45fe4-d_640x360?region=us 640w, https://i.vimeocdn.com/video/1702738711-c5a1d9e11d737b015712a9c970aaf565d28e17517c4ffb066366f477bfd45fe4-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Cacao &times; Bal Campaign</p>
@@ -616,10 +624,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="cacaoBalVideo"
-          src="https://player.vimeo.com/video/1129306121?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1129306121?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Cacao &times; Bal Campaign"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2072647493-f98a3a70a2a4e2ff71f8460359fc1640d934829b356d35d05a9b68bc66b73284-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2072647493-f98a3a70a2a4e2ff71f8460359fc1640d934829b356d35d05a9b68bc66b73284-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2072647493-f98a3a70a2a4e2ff71f8460359fc1640d934829b356d35d05a9b68bc66b73284-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Chocolate Clothes &mdash; Global Nature Nurture 2026</p>
@@ -646,10 +655,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="natureNurtureVideo"
-          src="https://player.vimeo.com/video/1239790107?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1239790107?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Chocolate Clothes &mdash; Global Nature Nurture 2026"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2217423104-94657c30120712f01e25099168c85da515353b33a88f07d536288b38f24b3e14-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2217423104-94657c30120712f01e25099168c85da515353b33a88f07d536288b38f24b3e14-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2217423104-94657c30120712f01e25099168c85da515353b33a88f07d536288b38f24b3e14-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Dabihemaa &mdash; Eden Collection</p>
@@ -676,10 +686,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="dabihemaaVideo"
-          src="https://player.vimeo.com/video/1129304861?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1129304861?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Dabihemaa &mdash; Eden Collection"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2072645788-a2f137d492e944d951057d21dd991693b738a82749b0e03db6ac40165730e96b-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2072645788-a2f137d492e944d951057d21dd991693b738a82749b0e03db6ac40165730e96b-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2072645788-a2f137d492e944d951057d21dd991693b738a82749b0e03db6ac40165730e96b-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Woodin &amp; Herman</p>
@@ -706,10 +717,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="woodinHermanVideo"
-          src="https://player.vimeo.com/video/1129334631?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1129334631?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Woodin &amp; Herman"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2072686049-485444ee3cafa04a3b56df049797576cf95aa1d1415bb8b5b948b555d47d0451-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2072686049-485444ee3cafa04a3b56df049797576cf95aa1d1415bb8b5b948b555d47d0451-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2072686049-485444ee3cafa04a3b56df049797576cf95aa1d1415bb8b5b948b555d47d0451-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Tribassa &mdash; Three Collection</p>
@@ -736,10 +748,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="tribassaVideo"
-          src="https://player.vimeo.com/video/1129333765?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1129333765?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Tribassa &mdash; Three Collection"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2072685002-7f5b517f46be3264f1a03d2faceb090b324947b3fda1df73ea28577d8c2325d1-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2072685002-7f5b517f46be3264f1a03d2faceb090b324947b3fda1df73ea28577d8c2325d1-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2072685002-7f5b517f46be3264f1a03d2faceb090b324947b3fda1df73ea28577d8c2325d1-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Chocolate &mdash; 2025 Collection</p>
@@ -766,10 +779,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="chocolate2025Video"
-          src="https://player.vimeo.com/video/1129316778?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1129316778?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Chocolate &mdash; 2025 Collection"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2072661770-ea42b2bf6c804fc16792c88e7778b9e25d1984ca74f246ad7900f3adf5c6ff27-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2072661770-ea42b2bf6c804fc16792c88e7778b9e25d1984ca74f246ad7900f3adf5c6ff27-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2072661770-ea42b2bf6c804fc16792c88e7778b9e25d1984ca74f246ad7900f3adf5c6ff27-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Woodin &times; Cacao Campaign</p>
@@ -796,10 +810,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
       <div class="slide-media">
         <iframe
           id="woodinCacaoVideo"
-          src="https://player.vimeo.com/video/1239791634?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
+          data-src="https://player.vimeo.com/video/1239791634?app_id=122963&background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0"
           title="Woodin &times; Cacao Campaign"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <img class="slide-poster" src="https://i.vimeocdn.com/video/2217424478-54af72a4f95d530e648f75c1660ea0e92944211821344646b901e6964be7b125-d_1280x720?region=us" srcset="https://i.vimeocdn.com/video/2217424478-54af72a4f95d530e648f75c1660ea0e92944211821344646b901e6964be7b125-d_640x360?region=us 640w, https://i.vimeocdn.com/video/2217424478-54af72a4f95d530e648f75c1660ea0e92944211821344646b901e6964be7b125-d_1280x720?region=us 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="" decoding="async" />
         <div class="media-shade"></div>
         <p class="media-label">A film by Jhoe Sey</p>
         <p class="next-hint"><span class="k">Next</span> Get in touch</p>
@@ -849,7 +864,7 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
 <footer>
   <div class="container footer-row">
     <p>© <span id="year"></span> HERE WE ARE</p>
-    <p>Developed by <a href="https://wa.me/233246381172" target="_blank" rel="noreferrer" class="dev-link">Michael</a></p>
+    <p>Developed by <a href="https://theimagedept.vercel.app/" target="_blank" rel="noreferrer" class="dev-link">TheImageDept</a></p>
     <p class="tag">Stories. Culture. Brands. People.</p>
   </div>
 </footer>
@@ -881,12 +896,27 @@ const dotsEl = document.getElementById("dots");
 let index = 0;
 
 // Vimeo players — muted autoplay loops; each plays only while its slide is
-// active, and its card title comes straight from Vimeo.
+// active, and its card title comes straight from Vimeo. A player is only
+// created when its slide (or the one before it) becomes active, so the page
+// doesn't load every video up front; the thumbnail poster covers the wait.
 const players = [];
+const videoConfig = [];
 function initVideo(frameId, slideIdx, titleId) {
-  const frame = document.getElementById(frameId);
+  videoConfig[slideIdx] = { frameId, titleId };
+}
+function loadVideo(slideIdx) {
+  const cfg = videoConfig[slideIdx];
+  if (!cfg || cfg.loaded) return;
+  const frame = document.getElementById(cfg.frameId);
   if (!frame || !window.Vimeo) return;
+  cfg.loaded = true;
+  const { titleId } = cfg;
+  frame.src = frame.dataset.src;
   const p = new Vimeo.Player(frame);
+  const media = frame.parentElement;
+  const reveal = () => { media.classList.add("is-playing"); p.off("timeupdate", reveal); };
+  p.on("playing", reveal);
+  p.on("timeupdate", reveal);
   if (titleId) {
     p.getVideoTitle().then((title) => {
       document.getElementById(titleId).textContent = title
@@ -919,6 +949,8 @@ document.querySelectorAll("#heroWall .wall-tile").forEach((tile) => {
 });
 
 function syncVideos() {
+  loadVideo(index);
+  loadVideo(index + 1); // warm up the next slide
   players.forEach(({ p, slideIdx }) => {
     if (slideIdx === index) { p.play().catch(() => {}); }
     else { p.pause().catch(() => {}); }
