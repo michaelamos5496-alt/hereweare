@@ -98,6 +98,8 @@ nav.links a {
   color: var(--muted); transition: color 0.3s;
 }
 nav.links a:hover { color: var(--foreground); }
+/* Very narrow phones: the logo already links home */
+@media (max-width: 420px) { nav.links .nav-home { display: none; } }
 @media (max-width: 560px) {
   nav.links { gap: 18px; }
   nav.links a { font-size: 11px; letter-spacing: 0.08em; }
@@ -320,6 +322,61 @@ nav.links a:hover { color: var(--foreground); }
   .dot.active { width: 26px; }
 }
 
+/* ===== Clients ===== */
+.clients { padding: 150px 0; border-top: 1px solid var(--line); }
+@media (max-width: 720px) { .clients { padding: 100px 0; } }
+.clients h2 {
+  margin-top: 24px; max-width: 16ch;
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  font-weight: 600; letter-spacing: -0.03em; line-height: 1.08;
+}
+.clients .logo-grid { margin-top: 64px; }
+@media (max-width: 720px) { .clients .logo-grid { margin-top: 44px; } }
+
+/* Client logo wall —
+   Logos arrive in mixed formats — dark-on-white, transparent, light-on-colour —
+   so each is turned into a white mark on black with a CSS filter, and
+   mix-blend-mode: screen drops the (now black) background into the page. */
+.logo-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line);
+}
+@media (min-width: 720px) { .logo-grid { grid-template-columns: repeat(4, 1fr); } }
+.client {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 3 / 2;
+  background: var(--background);
+  transition: background 0.5s var(--ease);
+}
+.client img {
+  max-width: 62%; max-height: 46%;
+  object-fit: contain;
+  transform: scale(var(--s, 1));
+  mix-blend-mode: screen;
+  opacity: 0.72;
+  transition: opacity 0.5s var(--ease), transform 0.6s var(--ease);
+}
+/* dark mark on white or transparent */
+.client.on-light img { filter: grayscale(1) invert(1) brightness(3); }
+/* light mark on a dark or coloured ground */
+.client.on-dark img { filter: grayscale(1) contrast(5); }
+/* dark mark on a mid-tone ground */
+.client.on-mid img { filter: grayscale(1) invert(1) brightness(0.8) contrast(8); }
+
+.client .name {
+  position: absolute; left: 0; right: 0; bottom: 14px;
+  text-align: center;
+  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0; transform: translateY(6px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.client:hover { background: var(--panel); }
+.client:hover img { opacity: 1; transform: scale(calc(var(--s, 1) * 1.06)); }
+.client:hover .name { opacity: 1; transform: none; }
+
 /* ===== Contact ===== */
 .contact { position: relative; overflow: hidden; padding: 150px 0; text-align: center; border-top: 1px solid var(--line); }
 @media (max-width: 720px) { .contact { padding: 100px 0; } }
@@ -370,8 +427,9 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
   <div class="container nav">
     <a href="#home" class="logo">HERE WE ARE<span>.</span></a>
     <nav class="links">
-      <a href="#home">Home</a>
+      <a href="#home" class="nav-home">Home</a>
       <a href="#work">Work</a>
+      <a href="#clients">Clients</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -844,6 +902,32 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
   <div class="dots" id="dots" role="tablist" aria-label="Projects"></div>
 </section>
 </div>
+
+<!-- Clients -->
+<section class="clients" id="clients">
+  <div class="container">
+    <p class="eyebrow reveal">Clients</p>
+    <h2 class="reveal" style="--d:.1s;">The brands and people we&rsquo;ve told stories for.</h2>
+    <div class="logo-grid reveal" style="--d:.2s;">
+      <div class="client on-dark"><img src="clients/woodin.jpg" alt="Woodin" style="--s:1.5" /><span class="name">Woodin</span></div>
+      <div class="client on-light"><img src="clients/nespresso.png" alt="Nespresso" /><span class="name">Nespresso</span></div>
+      <div class="client on-light"><img src="clients/unicef.png" alt="UNICEF" /><span class="name">UNICEF</span></div>
+      <div class="client on-light"><img src="clients/vlisco.webp" alt="Vlisco" style="--s:1.2" /><span class="name">Vlisco</span></div>
+      <div class="client on-light"><img src="clients/usaid.webp" alt="USAID" style="--s:1.15" /><span class="name">USAID</span></div>
+      <div class="client on-light"><img src="clients/jacques-lemans.png" alt="Jacques Lemans" /><span class="name">Jacques Lemans</span></div>
+      <div class="client on-light"><img src="clients/tree-aid.png" alt="Tree Aid" style="--s:1.1" /><span class="name">Tree Aid</span></div>
+      <div class="client on-light"><img src="clients/chocolate.png" alt="Chocolate" /><span class="name">Chocolate</span></div>
+      <div class="client on-light"><img src="clients/solidaridad.png" alt="Solidaridad" /><span class="name">Solidaridad</span></div>
+      <div class="client on-light"><img src="clients/tribassa-beauty.png" alt="Tribassa Beauty" style="--s:1.3" /><span class="name">Tribassa Beauty</span></div>
+      <div class="client on-light"><img src="clients/climate-impact-partners.png" alt="Climate Impact Partners" style="--s:1.1" /><span class="name">Climate Impact Partners</span></div>
+      <div class="client on-light"><img src="clients/debonair-afrik.jpg" alt="Debonair Afrik" /><span class="name">Debonair Afrik</span></div>
+      <div class="client on-light"><img src="clients/accra-city-hotel.jpg" alt="Accra City Hotel" style="--s:1.6" /><span class="name">Accra City Hotel</span></div>
+      <div class="client on-mid"><img src="clients/gtp.jpg" alt="GTP" style="--s:2" /><span class="name">GTP</span></div>
+      <div class="client on-dark"><img src="clients/amba-gallery.png" alt="Amba Gallery" style="--s:2.4" /><span class="name">Amba Gallery</span></div>
+      <div class="client on-dark"><img src="clients/tye-fusion.jpg" alt="Tye Fusión" style="--s:2.1" /><span class="name">Tye Fusión</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- Contact -->
 <section class="contact" id="contact">
